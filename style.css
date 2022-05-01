@@ -15,13 +15,14 @@ html {
 
 body {
   background-image: linear-gradient(to top right, #fda085, #f6d365 70%);
+  background-attachment: fixed;
   color: #222;
   font-family: "Poppins", sans-serif;
-  min-height: 100vh;
   line-height: 1.5;
-  padding: 2rem 0.75rem;
-  max-width: 56.25em;
-  margin: 0 auto;
+  height: 100%;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 button:focus,
@@ -30,14 +31,26 @@ input:focus {
   outline-offset: -2px;
 }
 
+.app {
+  max-width: 56.25em;
+  margin: 0 auto;
+  padding: 2rem 0.75rem;
+}
+
 .header {
-  font-size: 1.5rem;
   margin-bottom: 0.75rem;
   text-align: center;
 }
 
 .header h1 {
+  font-size: 3rem;
   text-decoration: underline;
+}
+
+@media (max-width: 43.0625em) {
+  .header h1 {
+    font-size: 2rem;
+  }
 }
 
 .form {
@@ -54,6 +67,12 @@ input:focus {
   }
 }
 
+@media (max-width: 39em) {
+  .form__box {
+    text-align: center;
+  }
+}
+
 .form__input,
 .form__btn {
   padding: 0.5rem;
@@ -63,6 +82,7 @@ input:focus {
 
 .form__input {
   background-color: #fff;
+  max-width: 70%;
 }
 
 .form__btn {
